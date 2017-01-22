@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model Procore.Models.Number
+
+<div class="jumbotron">
+    <h1>Sieve of Eratosthenes</h1>
+    <p class="lead">Enter a positive number upto which all prime numbers should be listed.</p>    
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.number, new { @required = true, @type = "number" })
+    <input type="submit" value="Get Primes" />
+}
+<p></p>
+<p>@TempData["count"]</p>
+<p>@TempData["primelist"]</p>
+
